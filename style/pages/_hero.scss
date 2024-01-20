@@ -6,4 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+
+  h1 {
+    color: $highlight;
+    text-shadow: 3px -3px #009889, 2px 1px 10px black;
+  }
 }

@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 @font-face {
   font-family: "Rowdies";
   src: url("/src/fonts/Rowdies/Rowdies-Regular.ttf");
@@ -14,6 +16,7 @@
 
 body {
   font-family: "Rowdies", sans-serif;
+  color: $dark-blue;
 }
 
 h1 {

@@ -88,6 +88,7 @@ select {
 }
 body {
   font-family: "Rowdies", sans-serif;
+  color: #002c45;
 }
 
 h1 {
@@ -134,6 +135,11 @@ nav .social-media-icons {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+}
+#hero h1 {
+  color: #00f8e1;
+  text-shadow: 3px -3px #009889, 2px 1px 10px black;
 }
 
 /*# sourceMappingURL=App.css.map */
