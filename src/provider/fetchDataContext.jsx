@@ -1,13 +1,13 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const DataFetchContext = createContext();
+export const FetchDataContext = createContext();
 
 export const DataFetchProvider = ({ children }) => {
   const [cryptoData, setCryptoData] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=75&page=1&sparkline=false";
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=${currentPage}&sparkline=false`;
 
   const fetchData = async () => {
     try {
@@ -17,9 +17,17 @@ export const DataFetchProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchData()
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, [currentPage]);
 
-  return <DataFetchContext.Provider value={{ cryptoData, setCryptoData }}>{children}</DataFetchContext.Provider>;
+  useEffect(() => {
+    console.log(cryptoData);
+  }, [cryptoData]);
+
+  return (
+    <FetchDataContext.Provider value={{ cryptoData, setCryptoData, currentPage, setCurrentPage }}>
+      {children}
+    </FetchDataContext.Provider>
+  );
 };
