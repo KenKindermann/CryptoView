@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { FetchDataContext } from "../../../provider/fetchDataContext";
-import Coin from "./TableRow";
 import TableRow from "./TableRow";
 
 const Table = () => {
