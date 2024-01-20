@@ -12,4 +12,19 @@
     color: $highlight;
     text-shadow: 3px -3px #009889, 2px 1px 10px black;
   }
+
+  img {
+    width: 50px;
+    animation: jumpUpAndDown 4s infinite; // Fügt eine Dauer von 1s hinzu
+  }
+}
+
+@keyframes jumpUpAndDown {
+  0%,
+  100% {
+    transform: translateY(0); // Startet und endet in der ursprünglichen Position
+  }
+  50% {
+    transform: translateY(2rem); // Bewegt sich um 2rem nach oben in der Mitte der Animation
+  }
 }

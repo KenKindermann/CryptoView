@@ -141,5 +141,18 @@ nav .social-media-icons {
   color: #00f8e1;
   text-shadow: 3px -3px #009889, 2px 1px 10px black;
 }
+#hero img {
+  width: 50px;
+  animation: jumpUpAndDown 4s infinite;
+}
+
+@keyframes jumpUpAndDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
+}
 
 /*# sourceMappingURL=App.css.map */
