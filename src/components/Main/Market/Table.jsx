@@ -17,9 +17,7 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {cryptoData?.data.map((coin) => (
-          <TableRow key={coin.id} data={coin} />
-        ))}
+        {cryptoData?.data.map((coin, index) => (index < 15 ? <TableRow key={coin.id} data={coin} /> : null))}
       </tbody>
     </table>
   );
