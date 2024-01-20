@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const DataFetchContext = createContext();
+export const FetchDataContext = createContext();
 
 export const DataFetchProvider = ({ children }) => {
   const [cryptoData, setCryptoData] = useState(null);
@@ -21,5 +21,5 @@ export const DataFetchProvider = ({ children }) => {
   //   fetchData()
   // }, []);
 
-  return <DataFetchContext.Provider value={{ cryptoData, setCryptoData }}>{children}</DataFetchContext.Provider>;
+  return <FetchDataContext.Provider value={{ cryptoData, setCryptoData }}>{children}</FetchDataContext.Provider>;
 };

@@ -169,11 +169,22 @@ nav .social-media-icons {
 #market table {
   width: 100%;
 }
+#market th {
+  font-size: 1.4rem;
+}
 #market tr {
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr 35%;
   font-size: 1.25rem;
   border-bottom: 2px solid black;
+  padding: 0.75rem;
+}
+#market tbody tr {
+  transition: 0.3s ease-in-out;
+}
+#market tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.5019607843);
+  cursor: pointer;
 }
 #market th,
 #market td {

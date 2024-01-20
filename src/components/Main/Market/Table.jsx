@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { FetchDataContext } from "../../../provider/fetchDataContext";
+
 const Table = () => {
+  const { cryptoData } = useContext(FetchDataContext);
+
   return (
     <table>
       <thead>
@@ -10,6 +15,24 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+        </tr>
+        <tr>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+        </tr>
+        <tr>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+          <td>Bitcoin</td>
+        </tr>
         <tr>
           <td>Bitcoin</td>
           <td>Bitcoin</td>
