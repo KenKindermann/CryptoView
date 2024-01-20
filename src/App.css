@@ -98,12 +98,16 @@ body {
   color: #002c45;
 }
 
-h1 {
+.big-header {
   font-size: 4rem;
+  color: #00f8e1;
+  text-shadow: 3px -3px #009889, 2px 1px 10px black;
+  text-transform: uppercase;
 }
 
-h2 {
+.subtitle {
   font-size: 2rem;
+  text-transform: uppercase;
 }
 
 nav {
@@ -143,10 +147,6 @@ nav .social-media-icons {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-}
-#hero h1 {
-  color: #00f8e1;
-  text-shadow: 3px -3px #009889, 2px 1px 10px black;
 }
 #hero img {
   width: 50px;
@@ -232,6 +232,13 @@ nav .social-media-icons {
 
 .select-page-btn.active {
   color: #00f8e1;
+}
+
+#join-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=App.css.map */
