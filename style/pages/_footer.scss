@@ -1,1 +1,16 @@
 @use "../global/" as *;
+
+footer {
+  background-color: $dark-blue;
+  padding: 3rem 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  p {
+    font-size: 1.5rem;
+  }
+}
