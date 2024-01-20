@@ -10,10 +10,10 @@ const SelectPage = () => {
   ];
 
   return (
-    <div>
-      {pages.map((page) => {
-        <SelectPageButton key={page.label} label={page.label} value={page.value} />;
-      })}
+    <div className="select-page">
+      {pages.map((page) => (
+        <SelectPageButton key={page.label} label={page.label} value={page.value} />
+      ))}
     </div>
   );
 };

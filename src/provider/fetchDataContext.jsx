@@ -24,5 +24,9 @@ export const DataFetchProvider = ({ children }) => {
     console.log(cryptoData);
   }, [cryptoData]);
 
-  return <FetchDataContext.Provider value={{ cryptoData, setCryptoData }}>{children}</FetchDataContext.Provider>;
+  return (
+    <FetchDataContext.Provider value={{ cryptoData, setCryptoData, currentPage, setCurrentPage }}>
+      {children}
+    </FetchDataContext.Provider>
+  );
 };

@@ -210,4 +210,28 @@ nav .social-media-icons {
   color: red;
 }
 
+.select-page {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.select-page-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #002c45;
+  color: white;
+  cursor: pointer;
+}
+
+.select-page-btn.active {
+  color: #00f8e1;
+}
+
 /*# sourceMappingURL=App.css.map */
