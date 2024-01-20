@@ -97,4 +97,34 @@ h2 {
   font-size: 1.25rem;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+}
+nav img {
+  width: 175px;
+}
+nav .social-media-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links ul li {
+  font-size: 1.25rem;
+  color: #002c45;
+  transition: 0.5s ease-in-out;
+}
+.nav-links ul li:hover {
+  color: #00f8e1;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=App.css.map */

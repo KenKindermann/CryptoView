@@ -1,1 +1,36 @@
 @use "../global/" as *;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+
+  img {
+    width: 175px;
+  }
+  .social-media-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.nav-links {
+  ul {
+    display: flex;
+    gap: 2rem;
+
+    li {
+      font-size: 1.25rem;
+      color: $dark-blue;
+      transition: 0.5s ease-in-out;
+    }
+
+    li:hover {
+      color: $highlight;
+      cursor: pointer;
+    }
+  }
+}

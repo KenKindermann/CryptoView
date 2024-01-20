@@ -1,5 +1,5 @@
 import { SocialIcon } from "react-social-icons";
-import logo from "/src/assets/images/CrypotViewLogo.png";
+import logo from "/src/assets/images/CryptoViewLogo.png";
 
 const Navbar = () => {
   return (
@@ -13,8 +13,18 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="social-media-icons">
-        <SocialIcon url="https://instagram.com" />
-        <SocialIcon url="https://discord.com" />
+        <SocialIcon
+          url="https://instagram.com"
+          target="_blank"
+          bgColor="#002c45"
+          style={{ width: "35px", height: "35px" }}
+        />
+        <SocialIcon
+          url="https://discord.com"
+          target="_blank"
+          bgColor="#002c45"
+          style={{ width: "35px", height: "35px" }}
+        />
       </div>
     </nav>
   );
