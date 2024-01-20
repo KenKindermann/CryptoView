@@ -1,4 +1,5 @@
 import Hero from "./Hero/Hero";
+import JoinUs from "./JoinUs/JoinUs";
 import Market from "./Market/Market";
 
 const Main = () => {
@@ -6,6 +7,7 @@ const Main = () => {
     <main>
       <Hero />
       <Market />
+      <JoinUs />
     </main>
   );
 };

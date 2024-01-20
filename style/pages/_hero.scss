@@ -8,11 +8,6 @@
   align-items: center;
   text-transform: uppercase;
 
-  h1 {
-    color: $highlight;
-    text-shadow: 3px -3px #009889, 2px 1px 10px black;
-  }
-
   img {
     width: 50px;
     animation: jumpUpAndDown 4s infinite; // Fügt eine Dauer von 1s hinzu

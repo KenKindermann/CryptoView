@@ -19,10 +19,14 @@ body {
   color: $dark-blue;
 }
 
-h1 {
+.big-header {
   font-size: 4rem;
+  color: $highlight;
+  text-shadow: 3px -3px #009889, 2px 1px 10px black;
+  text-transform: uppercase;
 }
 
-h2 {
+.subtitle {
   font-size: 2rem;
+  text-transform: uppercase;
 }
