@@ -38,6 +38,8 @@ body {
   line-height: 1.5;
   padding: 0;
   margin: 0;
+  background: rgb(254, 254, 254);
+  background: linear-gradient(124deg, rgb(254, 254, 254) 0%, #83ffff 100%);
 }
 
 /* A elements that don't have a class get default styles */
@@ -74,6 +76,11 @@ select {
     scroll-behavior: auto !important;
   }
 }
+section:not(:first-child) {
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
 @font-face {
   font-family: "Rowdies";
   src: url("/src/fonts/Rowdies/Rowdies-Regular.ttf");
