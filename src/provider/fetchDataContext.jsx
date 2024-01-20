@@ -17,9 +17,12 @@ export const DataFetchProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchData()
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  useEffect(() => {
+    console.log(cryptoData);
+  }, [cryptoData]);
 
   return <FetchDataContext.Provider value={{ cryptoData, setCryptoData }}>{children}</FetchDataContext.Provider>;
 };

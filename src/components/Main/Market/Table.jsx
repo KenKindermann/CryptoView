@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { FetchDataContext } from "../../../provider/fetchDataContext";
+import Coin from "./TableRow";
+import TableRow from "./TableRow";
 
 const Table = () => {
   const { cryptoData } = useContext(FetchDataContext);
@@ -15,30 +17,9 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-        </tr>
-        <tr>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-        </tr>
-        <tr>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-        </tr>
-        <tr>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-          <td>Bitcoin</td>
-        </tr>
+        {cryptoData?.data.map((coin) => (
+          <TableRow key={coin.id} data={coin} />
+        ))}
       </tbody>
     </table>
   );

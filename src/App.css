@@ -174,13 +174,20 @@ nav .social-media-icons {
 }
 #market tr {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.5fr 35%;
+  grid-template-columns: 1fr 1fr 1fr 35%;
   font-size: 1.25rem;
   border-bottom: 2px solid black;
   padding: 0.75rem;
 }
+#market tbody img {
+  width: 30px;
+  margin-right: 5px;
+}
 #market tbody tr {
   transition: 0.3s ease-in-out;
+}
+#market tbody tr td:first-child {
+  display: flex;
 }
 #market tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5019607843);
@@ -188,15 +195,19 @@ nav .social-media-icons {
 }
 #market th,
 #market td {
-  text-align: center;
+  text-align: end;
 }
 #market th:first-child,
 #market td:first-child {
-  text-align: left;
+  text-align: start;
 }
-#market th:last-child,
-#market td:last-child {
-  text-align: end;
+
+.profit {
+  color: green;
+}
+
+.loss {
+  color: red;
 }
 
 /*# sourceMappingURL=App.css.map */
