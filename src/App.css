@@ -253,4 +253,18 @@ nav .social-media-icons {
   cursor: pointer;
 }
 
+footer {
+  background-color: #002c45;
+  padding: 3rem 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer p {
+  font-size: 1.5rem;
+}
+
 /*# sourceMappingURL=App.css.map */
