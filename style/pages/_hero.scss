@@ -1,1 +1,9 @@
 @use "../global/" as *;
+
+#hero {
+  height: 90svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
