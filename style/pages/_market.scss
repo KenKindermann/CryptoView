@@ -1,1 +1,33 @@
 @use "../global/" as *;
+
+#market {
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+
+  table {
+    width: 100%;
+  }
+
+  tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr 35%;
+    font-size: 1.25rem;
+    border-bottom: 2px solid black;
+  }
+
+  th,
+  td {
+    text-align: center;
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: left;
+  }
+
+  th:last-child,
+  td:last-child {
+    text-align: end;
+  }
+}
