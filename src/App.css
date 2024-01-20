@@ -78,7 +78,7 @@ select {
 }
 section:not(:first-child) {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 10rem auto;
 }
 
 @font-face {
@@ -239,6 +239,18 @@ nav .social-media-icons {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#join-us button {
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  background-color: #002c45;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px black;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */
