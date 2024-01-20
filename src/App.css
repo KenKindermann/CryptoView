@@ -44,7 +44,7 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -240,7 +240,7 @@ nav .social-media-icons {
   justify-content: center;
   align-items: center;
 }
-#join-us button {
+#join-us a {
   padding: 0.5rem 2rem;
   margin-top: 1rem;
   background-color: #002c45;
