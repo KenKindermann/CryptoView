@@ -19,7 +19,8 @@ export const DataFetchProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [currentPage]);
+
   useEffect(() => {
     console.log(cryptoData);
   }, [cryptoData]);
