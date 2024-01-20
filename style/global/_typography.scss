@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 @font-face {
   font-family: "Rowdies";
   src: url("/src/fonts/Rowdies/Rowdies-Regular.ttf");
@@ -14,12 +16,13 @@
 
 body {
   font-family: "Rowdies", sans-serif;
+  color: $dark-blue;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }

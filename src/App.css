@@ -17,6 +17,7 @@ blockquote,
 dl,
 dd {
   margin-block-end: 0;
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -87,14 +88,15 @@ select {
 }
 body {
   font-family: "Rowdies", sans-serif;
+  color: #002c45;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 nav {
@@ -125,6 +127,32 @@ nav .social-media-icons {
 .nav-links ul li:hover {
   color: #00f8e1;
   cursor: pointer;
+}
+
+#hero {
+  height: 90svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+#hero h1 {
+  color: #00f8e1;
+  text-shadow: 3px -3px #009889, 2px 1px 10px black;
+}
+#hero img {
+  width: 50px;
+  animation: jumpUpAndDown 4s infinite;
+}
+
+@keyframes jumpUpAndDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
