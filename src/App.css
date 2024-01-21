@@ -267,9 +267,13 @@ footer p {
   font-size: 1.5rem;
 }
 
+#detail-view {
+  min-height: 90svh;
+}
 #detail-view .coin-details {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 20% 30% 1fr;
+  gap: 4rem;
   border: 3px solid white;
   padding: 1rem;
 }
@@ -288,6 +292,22 @@ footer p {
 #detail-view .coin-info div span:last-child {
   min-width: 170px;
   text-align: end;
+}
+#detail-view .coin-description {
+  height: 210px;
+  word-break: break-word;
+  overflow-y: scroll;
+}
+#detail-view .coin-description::-webkit-scrollbar {
+  width: 10px;
+}
+#detail-view .coin-description::-webkit-scrollbar-track {
+  background: #002c45;
+  border-radius: 5px;
+}
+#detail-view .coin-description::-webkit-scrollbar-thumb {
+  background: #00f8e1;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=App.css.map */

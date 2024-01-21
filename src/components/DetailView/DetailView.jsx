@@ -1,41 +1,51 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CurrentDataContext } from "../../provider/CurrentDataContext";
+import useFetch from "../../hooks/useFetch";
 
 const DetailView = () => {
   const { cryptoData } = useContext(CurrentDataContext);
   const { id } = useParams();
   const [currentCoin, setCurrentCoin] = useState(null);
+  const { fetchData } = useFetch();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const url = `https://api.coingecko.com/api/v3/coins/${id}`;
+    fetchData(url, setCurrentCoin);
+  }, [id]);
 
-  console.log("Current Coin:", currentCoin);
+  useEffect(() => {
+    console.log(currentCoin);
+  }, [currentCoin]);
 
   return (
     <section id="detail-view">
       <div className="coin-details">
-        <img src={currentCoin?.image} alt={`${currentCoin?.name} icon`} />
+        <img src={currentCoin?.data.image.large} alt={`${currentCoin?.name} icon`} />
         <div className="coin-info">
           <div>
             <span>Current Price:</span>
-            <span>{currentCoin?.current_price}</span>
+            <span>{currentCoin?.data.market_data.current_price.usd}</span>
           </div>
           <div>
             <span>Lowest 24h:</span>
-            <span>{currentCoin?.low_24h}</span>
+            <span>{currentCoin?.data.market_data.low_24h.usd}</span>
           </div>
           <div>
             <span>Highest 24h:</span>
-            <span>{currentCoin?.high_24h}</span>
+            <span>{currentCoin?.data.market_data.high_24h.usd}</span>
           </div>
           <div>
             <span>24h Change:</span>
-            <span>{currentCoin?.price_change_percentage_24h}</span>
+            <span>{currentCoin?.data.market_data.price_change_percentage_24h}</span>
           </div>
           <div>
             <span>Total Volume:</span>
-            <span>{currentCoin?.total_volume}</span>
+            <span>{currentCoin?.data.market_data.total_volume.usd}</span>
           </div>
+        </div>
+        <div className="coin-description">
+          <p>{currentCoin?.data.description.en}</p>
         </div>
       </div>
     </section>
