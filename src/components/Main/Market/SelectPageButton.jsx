@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react";
-import { FetchDataContext } from "../../../provider/fetchDataContext";
+import { useContext } from "react";
+import { CurrentDataContext } from "../../../provider/CurrentDataContext";
 
 const SelectPageButton = ({ label, value }) => {
-  const { currentPage, setCurrentPage } = useContext(FetchDataContext);
+  const { currentPage, setCurrentPage } = useContext(CurrentDataContext);
 
   return (
     <div
