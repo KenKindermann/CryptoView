@@ -1,6 +1,7 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 const Diagram = ({ id }) => {
   const { fetchData } = useFetch();
@@ -17,14 +18,12 @@ const Diagram = ({ id }) => {
   useEffect(() => {
     if (history) {
       const data = history.data.prices.reduce((acc, item) => {
-        const date = new Date(item[0]);
-        const month = date.getMonth();
-        const year = date.getFullYear();
-        const key = `${year}-${month}`;
+        const date = moment(item[0]);
+        const key = date.format("YYYY-MM");
 
         if (!acc[key]) {
           acc[key] = {
-            time: `${monthNames[month]} ${year}`,
+            time: date.format("MMM YYYY"),
             price: item[1],
             count: 1,
           };
