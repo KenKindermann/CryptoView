@@ -1,16 +1,12 @@
 import { useContext, useEffect } from "react";
-
 import fetchData from "../../../hooks/useFetch";
 import TableRow from "./TableRow";
 import { CurrentDataContext } from "../../../provider/CurrentDataContext";
+import useFetch from "../../../hooks/useFetch";
 
 const Table = () => {
   const { cryptoData, setCryptoData, currentPage } = useContext(CurrentDataContext);
-
-  useEffect(() => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=${currentPage}&sparkline=false`;
-    fetchData(url, setCryptoData);
-  }, [currentPage]);
+  const { fetchData } = useFetch();
 
   return (
     <table>
