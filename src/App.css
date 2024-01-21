@@ -267,4 +267,27 @@ footer p {
   font-size: 1.5rem;
 }
 
+#detail-view .coin-details {
+  display: flex;
+  gap: 2rem;
+  border: 3px solid white;
+  padding: 1rem;
+}
+#detail-view .coin-info {
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+}
+#detail-view .coin-info div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+}
+#detail-view .coin-info div span:last-child {
+  min-width: 170px;
+  text-align: end;
+}
+
 /*# sourceMappingURL=App.css.map */
