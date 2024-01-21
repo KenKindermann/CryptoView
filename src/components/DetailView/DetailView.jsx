@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CurrentDataContext } from "../../provider/CurrentDataContext";
 import useFetch from "../../hooks/useFetch";
+import Diagram from "./Diagram";
 
 const DetailView = () => {
   const { cryptoData } = useContext(CurrentDataContext);
@@ -48,6 +49,7 @@ const DetailView = () => {
           <p>{currentCoin?.data.description.en}</p>
         </div>
       </div>
+      <Diagram id={id} />
     </section>
   );
 };
