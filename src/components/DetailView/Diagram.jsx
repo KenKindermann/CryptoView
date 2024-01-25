@@ -2,41 +2,36 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts"
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import test from "./testObject.js";
 
 const Diagram = ({ id }) => {
   const { fetchData } = useFetch();
   const [history, setHistory] = useState(null);
   const [formattedData, setFormattedData] = useState();
+  const [uniqueMonths, setUniqueMonths] = useState();
+
+  // useEffect(() => {
+  //   if (id) {
+  //     const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=0`;
+  //     fetchData(url, setHistory);
+  //   }
+  // }, [id]);
 
   useEffect(() => {
-    if (id) {
-      const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=0`;
-      fetchData(url, setHistory);
-    }
-  }, [id]);
+    setHistory(test);
+  }, []);
+
+  useEffect(() => {
+    console.log("Formatiert:", formattedData);
+  }, [formattedData]);
 
   useEffect(() => {
     if (history) {
-      const data = history.data.prices.reduce((acc, item) => {
-        const date = moment(item[0]);
-        const key = date.format("YYYY-MM");
-
-        if (!acc[key]) {
-          acc[key] = {
-            time: date.format("MMM YYYY"),
-            price: item[1],
-            count: 1,
-          };
-        } else {
-          acc[key].price += item[1];
-          acc[key].count += 1;
-        }
-        return acc;
-      }, {});
-
-      const formattedData = Object.values(data).map((item) => ({
-        time: item.time,
-        price: item.price / item.count,
+      console.log("HISTORY", history);
+      const formattedData = history.map((item) => ({
+        month: moment(item[0]).format("MMM YY"),
+        time: moment(item[0]).format("YYYY-MM-DD"),
+        price: item[1],
       }));
 
       setFormattedData(formattedData);
@@ -44,24 +39,37 @@ const Diagram = ({ id }) => {
   }, [history]);
 
   useEffect(() => {
-    console.log(formattedData);
+    if (formattedData) {
+      const uniqueMonths = Array.from(
+        new Set(formattedData.map(({ time }) => moment(time).startOf("month").format("YYYY-MM-DD")))
+      );
+      setUniqueMonths(uniqueMonths);
+    }
   }, [formattedData]);
 
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  useEffect(() => {
+    console.log("Months:", uniqueMonths);
+  }, [uniqueMonths]);
 
   const formatXAxis = (tickItem) => {
-    const date = new Date(tickItem);
-    return monthNames[date.getMonth()];
+    const date = moment(tickItem, "YYYY-MM-DD");
+    return date.format("MMM YY");
   };
 
   return (
     <div>
-      <LineChart width={700} height={300} data={formattedData}>
-        <Line type="monotone" dataKey="price" stroke="#8884d8" />
+      <LineChart width={800} height={300} data={formattedData}>
+        <Line type="monotone" dataKey="price" stroke="#002c45" dot={false} />
         <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="time" tickFormatter={formatXAxis} />
+        <XAxis
+          dataKey="time"
+          ticks={uniqueMonths}
+          tickFormatter={formatXAxis}
+          interval={0}
+          tick={{ fontSize: 10, angle: -45, dy: 10 }}
+        />
         <YAxis />
-        <Tooltip />
+        <Tooltip labelFormatter={(value) => moment(value, "YYYY-MM-DD").format("DD.MM.YYYY")} />
       </LineChart>
     </div>
   );
