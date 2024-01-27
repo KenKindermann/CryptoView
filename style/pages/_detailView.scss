@@ -47,4 +47,31 @@
       border-radius: 5px;
     }
   }
+
+  .diagram {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .choose-period {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    button {
+      padding: 0.2rem 0.5rem;
+      background-color: white;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 2px 2px 5px black;
+      cursor: pointer;
+    }
+
+    button.active {
+      background-color: $dark-blue;
+      color: white;
+    }
+  }
 }

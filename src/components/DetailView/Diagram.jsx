@@ -9,6 +9,9 @@ const Diagram = ({ id }) => {
   const [history, setHistory] = useState(null);
   const [formattedData, setFormattedData] = useState();
   const [uniqueMonths, setUniqueMonths] = useState();
+  const [activePeriod, setActivePeriod] = useState("12 month");
+
+  const periods = ["1 month", "3 month", "6 month", "12 month"];
 
   // useEffect(() => {
   //   if (id) {
@@ -20,10 +23,6 @@ const Diagram = ({ id }) => {
   useEffect(() => {
     setHistory(test);
   }, []);
-
-  useEffect(() => {
-    console.log("Formatiert:", formattedData);
-  }, [formattedData]);
 
   useEffect(() => {
     if (history) {
@@ -47,31 +46,40 @@ const Diagram = ({ id }) => {
     }
   }, [formattedData]);
 
-  useEffect(() => {
-    console.log("Months:", uniqueMonths);
-  }, [uniqueMonths]);
-
   const formatXAxis = (tickItem) => {
     const date = moment(tickItem, "YYYY-MM-DD");
     return date.format("MMM YY");
   };
 
+  useEffect(() => {
+    console.log(activePeriod);
+  }, [activePeriod]);
+
   return (
-    <div>
-      <LineChart width={800} height={300} data={formattedData}>
-        <Line type="monotone" dataKey="price" stroke="#002c45" dot={false} />
-        <CartesianGrid stroke="#ccc" />
-        <XAxis
-          dataKey="time"
-          ticks={uniqueMonths}
-          tickFormatter={formatXAxis}
-          interval={0}
-          tick={{ fontSize: 10, angle: -45, dy: 10 }}
-        />
-        <YAxis />
-        <Tooltip labelFormatter={(value) => moment(value, "YYYY-MM-DD").format("DD.MM.YYYY")} />
-      </LineChart>
-    </div>
+    <>
+      <div className="diagram">
+        <LineChart width={800} height={300} data={formattedData}>
+          <Line type="monotone" dataKey="price" stroke="#002c45" dot={false} />
+          <CartesianGrid stroke="#ccc" />
+          <XAxis
+            dataKey="time"
+            ticks={uniqueMonths}
+            tickFormatter={formatXAxis}
+            interval={0}
+            tick={{ fontSize: 10, angle: -45, dy: 10 }}
+          />
+          <YAxis />
+          <Tooltip labelFormatter={(value) => moment(value, "YYYY-MM-DD").format("DD.MM.YYYY")} />
+        </LineChart>
+      </div>
+      <div className="choose-period">
+        {periods.map((period) => (
+          <button className={activePeriod === period ? `active` : null} onClick={() => setActivePeriod(period)}>
+            {period}
+          </button>
+        ))}
+      </div>
+    </>
   );
 };
 

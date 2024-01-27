@@ -309,5 +309,28 @@ footer p {
   background: #00f8e1;
   border-radius: 5px;
 }
+#detail-view .diagram {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+#detail-view .choose-period {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+#detail-view .choose-period button {
+  padding: 0.2rem 0.5rem;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+}
+#detail-view .choose-period button.active {
+  background-color: #002c45;
+  color: white;
+}
 
 /*# sourceMappingURL=App.css.map */
