@@ -1,121 +1,64 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 import useFetch from "../../hooks/useFetch";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import moment from "moment";
 import test from "./testObject.js";
+import periods from "./periods.js";
 
 const Diagram = ({ id }) => {
   const { fetchData } = useFetch();
   const [history, setHistory] = useState(null);
-  const [formattedData, setFormattedData] = useState();
+  const [activePeriod, setActivePeriod] = useState(periods[3]);
   const [uniqueTicks, setUniqueTicks] = useState();
-  const [activePeriod, setActivePeriod] = useState("12 month");
-
-  const periods = [
-    {
-      label: "1 month",
-      substract: 1,
-      dateFormat: "DD.MM.",
-    },
-    {
-      label: "3 month",
-      substract: 3,
-      dateFormat: "WW",
-    },
-    {
-      label: "6 month",
-      substract: 6,
-      dateFormat: "MMM YY",
-    },
-    {
-      label: "12 month",
-      substract: 12,
-      dateFormat: "MMM YY",
-    },
-  ];
-
-  // useEffect(() => {
-  //   if (id) {
-  //     const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=0`;
-  //     fetchData(url, setHistory);
-  //   }
-  // }, [id]);
 
   useEffect(() => {
-    setHistory(test);
-  }, []);
-
-  useEffect(() => {
-    if (formattedData) {
-      setTicks("12 month");
+    if (id) {
+      const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=0`;
+      fetchData(url, setHistory, true);
     }
-  }, [formattedData]);
+  }, [id]);
 
-  // Formatting history data from api to needed structure for diagram
   useEffect(() => {
     if (history) {
-      const formattedData = history.map((item) => ({
-        month: moment(item[0]).format("MMM YY"),
-        time: moment(item[0]).format("YYYY-MM-DD"),
-        price: item[1],
-      }));
-
-      setFormattedData(formattedData);
+      setUniqueTicks(activePeriod.getTicks(history));
     }
   }, [history]);
+
+  useEffect(() => {
+    console.log("HISOTREY", history);
+  }, [history]);
+
+  // useEffect(() => {
+  //   setHistory(test);
+  // }, []);
+
+  // Formatting history data from api to needed structure for diagram
+  // useEffect(() => {
+  //   if (history) {
+  //     const formattedData = history.data.prices.map((item) => ({
+  //       month: moment(item[0]).format("MMM YY"),
+  //       time: moment(item[0]).format("YYYY-MM-DD"),
+  //       price: item[1],
+  //     }));
+
+  //     setFormattedData(formattedData);
+  //   }
+  // }, [history]);
 
   // Format
   const formatXAxis = (tickItem) => {
     const date = moment(tickItem, "YYYY-MM-DD");
-    const currentPeriod = periods.find((period) => period.label === activePeriod);
-    return date.format(currentPeriod.dateFormat);
-    switch (activePeriod) {
-      case "12 month":
-        return date.format("MMM YY");
-      case "6 month":
-        return date.format("MMM YY");
-      case "3 month":
-        return date.format("WW");
-      case "1 month":
-        return date.format("DD.MM.");
-      default:
-        return date.format("MMM YY");
-    }
-  };
-
-  // Format ticks by current period
-  const setTicks = (currentPeriod) => {
-    let ticks;
-    switch (currentPeriod) {
-      case "3 month":
-        ticks = Array.from(
-          new Set(formattedData?.map(({ time }) => moment(time).startOf("week").format("YYYY-MM-DD")))
-        );
-        break;
-      case "1 month":
-        ticks = formattedData?.map(({ time }) => moment(time).format("YYYY-MM-DD"));
-        break;
-      default:
-        ticks = Array.from(
-          new Set(formattedData?.map(({ time }) => moment(time).startOf("month").format("YYYY-MM-DD")))
-        );
-        break;
-    }
-    setUniqueTicks(ticks);
-    setActivePeriod(currentPeriod);
+    return date.format(activePeriod.dateFormat);
   };
 
   // Filter data by current period
   const showPeriodData = () => {
     const now = moment();
-    const currentPeriod = periods.find((period) => period.label === activePeriod);
-    return formattedData.filter((data) =>
-      moment(data.time).isAfter(now.clone().subtract(currentPeriod.substract, "months"))
-    );
+    return history.filter((data) => moment(data.time).isAfter(now.clone().subtract(activePeriod.substract, "months")));
   };
 
   return (
-    formattedData && (
+    history && (
       <>
         <div className="diagram">
           <LineChart key={uniqueTicks} width={900} height={300} data={showPeriodData()}>
@@ -138,7 +81,9 @@ const Diagram = ({ id }) => {
             <button
               key={period.label}
               className={activePeriod === period.label ? `active` : null}
-              onClick={() => setTicks(period.label)}
+              onClick={() => {
+                setActivePeriod(period), setUniqueTicks(period.getTicks(history));
+              }}
             >
               {period.label}
             </button>
