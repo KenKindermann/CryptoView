@@ -1,0 +1,77 @@
+@use "../global/" as *;
+
+#detail-view {
+  min-height: 90svh;
+  .coin-details {
+    display: grid;
+    grid-template-columns: 20% 30% 1fr;
+    gap: 4rem;
+    border: 3px solid white;
+    padding: 1rem;
+  }
+
+  .coin-info {
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+
+    div {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      gap: 1rem;
+    }
+
+    div span:last-child {
+      min-width: 170px;
+      text-align: end;
+    }
+  }
+
+  .coin-description {
+    height: 210px;
+    word-break: break-word;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $dark-blue;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $highlight;
+      border-radius: 5px;
+    }
+  }
+
+  .diagram {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .choose-period {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    button {
+      padding: 0.2rem 0.5rem;
+      background-color: white;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 2px 2px 5px black;
+      cursor: pointer;
+    }
+
+    button.active {
+      background-color: $dark-blue;
+      color: white;
+    }
+  }
+}

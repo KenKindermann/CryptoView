@@ -1,11 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 const TableRow = ({ data }) => {
   const formattedData = {
     current_price: new Intl.NumberFormat("de-DE", { style: "currency", currency: "USD" }).format(data?.current_price),
     price_change_percentage_24h: `${data?.price_change_percentage_24h.toFixed(2)}%`,
     market_cap: new Intl.NumberFormat("de-DE").format(data?.market_cap),
   };
+
+  const navigate = useNavigate();
   return (
-    <tr>
+    <tr onClick={() => navigate(`detailview/${data.id}`)}>
       <td>
         <img src={data?.image} alt={`${data.name}icon`} />
         {data.name}

@@ -1,9 +1,12 @@
-import { useContext } from "react";
-import { FetchDataContext } from "../../../provider/fetchDataContext";
+import { useContext, useEffect } from "react";
+import fetchData from "../../../hooks/useFetch";
 import TableRow from "./TableRow";
+import { CurrentDataContext } from "../../../provider/CurrentDataContext";
+import useFetch from "../../../hooks/useFetch";
 
 const Table = () => {
-  const { cryptoData } = useContext(FetchDataContext);
+  const { cryptoData, setCryptoData, currentPage } = useContext(CurrentDataContext);
+  const { fetchData } = useFetch();
 
   return (
     <table>
