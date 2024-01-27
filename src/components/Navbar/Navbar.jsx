@@ -26,6 +26,11 @@ const Navbar = () => {
           style={{ width: "35px", height: "35px" }}
         />
       </div>
+      <div className="toggle-bar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   );
 };
