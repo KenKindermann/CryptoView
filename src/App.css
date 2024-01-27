@@ -271,14 +271,22 @@ footer p {
   min-height: 90svh;
 }
 #detail-view .coin-details {
-  display: grid;
-  grid-template-columns: 20% 30% 1fr;
-  gap: 4rem;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
   border: 3px solid white;
   padding: 1rem;
+  gap: 2rem;
+  align-items: center;
+}
+#detail-view .image-and-details {
+  display: flex;
+  gap: 1rem;
+  width: 60%;
 }
 #detail-view .coin-info {
-  font-size: 1.25rem;
+  width: 100%;
+  font-size: 1.125rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -287,14 +295,13 @@ footer p {
 #detail-view .coin-info div {
   display: grid;
   grid-template-columns: 50% 50%;
-  gap: 1rem;
 }
 #detail-view .coin-info div span:last-child {
-  min-width: 170px;
   text-align: end;
 }
 #detail-view .coin-description {
   height: 210px;
+  width: 40%;
   word-break: break-word;
   overflow-y: scroll;
 }
@@ -331,6 +338,28 @@ footer p {
 #detail-view .choose-period button.active {
   background-color: #002c45;
   color: white;
+}
+
+@media (max-width: 1024px) {
+  #detail-view .coin-details {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+  #detail-view .coin-description {
+    width: 100%;
+  }
+  #detail-view .image-and-details {
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  #detail-view .image-and-details {
+    flex-direction: column;
+  }
+  #detail-view .image-and-details img {
+    width: 30%;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
