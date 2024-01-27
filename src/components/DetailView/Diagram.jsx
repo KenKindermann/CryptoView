@@ -15,18 +15,22 @@ const Diagram = ({ id }) => {
     {
       label: "1 month",
       substract: 1,
+      dateFormat: "DD.MM.",
     },
     {
       label: "3 month",
       substract: 3,
+      dateFormat: "WW",
     },
     {
       label: "6 month",
       substract: 6,
+      dateFormat: "MMM YY",
     },
     {
       label: "12 month",
       substract: 12,
+      dateFormat: "MMM YY",
     },
   ];
 
@@ -63,6 +67,8 @@ const Diagram = ({ id }) => {
   // Format
   const formatXAxis = (tickItem) => {
     const date = moment(tickItem, "YYYY-MM-DD");
+    const currentPeriod = periods.find((period) => period.label === activePeriod);
+    return date.format(currentPeriod.dateFormat);
     switch (activePeriod) {
       case "12 month":
         return date.format("MMM YY");
