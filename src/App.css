@@ -123,12 +123,15 @@ nav img {
 }
 nav .social-media-icons {
   display: flex;
+  justify-content: end;
   gap: 0.5rem;
+  width: 175px;
 }
 
 .nav-links ul {
   display: flex;
   gap: 2rem;
+  padding: 0;
 }
 .nav-links ul li {
   font-size: 1.25rem;

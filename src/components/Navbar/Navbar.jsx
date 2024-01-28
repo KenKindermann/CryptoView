@@ -15,7 +15,9 @@ const Navbar = () => {
       <div className={`nav-links ${showMenu && `active`}`}>
         <ul>
           <li>Home</li>
-          <li>Market</li>
+          <li>
+            <a href="#market">Market</a>
+          </li>
           <li>Join us</li>
         </ul>
         <img

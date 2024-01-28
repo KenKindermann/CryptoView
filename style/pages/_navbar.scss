@@ -13,7 +13,9 @@ nav {
   }
   .social-media-icons {
     display: flex;
+    justify-content: end;
     gap: 0.5rem;
+    width: 175px;
   }
 }
 
@@ -21,7 +23,7 @@ nav {
   ul {
     display: flex;
     gap: 2rem;
-
+    padding: 0;
     li {
       font-size: 1.25rem;
       color: $dark-blue;
