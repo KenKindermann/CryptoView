@@ -15,36 +15,35 @@ const DetailView = () => {
     fetchData(url, setCurrentCoin);
   }, [id]);
 
-  useEffect(() => {
-    console.log(currentCoin);
-  }, [currentCoin]);
-
   return (
     <section id="detail-view">
       <div className="coin-details">
-        <img src={currentCoin?.data.image.large} alt={`${currentCoin?.name} icon`} />
-        <div className="coin-info">
-          <div>
-            <span>Current Price:</span>
-            <span>{currentCoin?.data.market_data.current_price.usd}</span>
-          </div>
-          <div>
-            <span>Lowest 24h:</span>
-            <span>{currentCoin?.data.market_data.low_24h.usd}</span>
-          </div>
-          <div>
-            <span>Highest 24h:</span>
-            <span>{currentCoin?.data.market_data.high_24h.usd}</span>
-          </div>
-          <div>
-            <span>24h Change:</span>
-            <span>{currentCoin?.data.market_data.price_change_percentage_24h}</span>
-          </div>
-          <div>
-            <span>Total Volume:</span>
-            <span>{currentCoin?.data.market_data.total_volume.usd}</span>
+        <div className="image-and-details">
+          <img src={currentCoin?.data.image.large} alt={`${currentCoin?.name} icon`} />
+          <div className="coin-info">
+            <div>
+              <span>Current Price:</span>
+              <span>{currentCoin?.data.market_data.current_price.usd}</span>
+            </div>
+            <div>
+              <span>Lowest 24h:</span>
+              <span>{currentCoin?.data.market_data.low_24h.usd}</span>
+            </div>
+            <div>
+              <span>Highest 24h:</span>
+              <span>{currentCoin?.data.market_data.high_24h.usd}</span>
+            </div>
+            <div>
+              <span>24h Change:</span>
+              <span>{currentCoin?.data.market_data.price_change_percentage_24h}</span>
+            </div>
+            <div>
+              <span>Total Volume:</span>
+              <span>{currentCoin?.data.market_data.total_volume.usd}</span>
+            </div>
           </div>
         </div>
+
         <div className="coin-description">
           <p>{currentCoin?.data.description.en}</p>
         </div>
