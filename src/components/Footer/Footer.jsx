@@ -4,20 +4,10 @@ const Footer = () => {
   return (
     <footer>
       <p>Copyright 2024.</p>
-      <div className="social-media-icons">
-        <SocialIcon
-          url="https://instagram.com"
-          target="_blank"
-          bgColor="black"
-          style={{ width: "35px", height: "35px" }}
-        />
-        <SocialIcon
-          url="https://discord.com"
-          target="_blank"
-          bgColor="black"
-          style={{ width: "35px", height: "35px" }}
-        />
-      </div>
+      <span>Data from</span>
+      <a href="https://goingecko.com" target="_blank">
+        <img src="/src/assets/images/coingecko_logo_with_text_biw_logo_with_dark_text copy.svg" alt="coin gecko logo" />
+      </a>
     </footer>
   );
 };
