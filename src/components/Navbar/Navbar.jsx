@@ -1,9 +1,13 @@
 import { SocialIcon } from "react-social-icons";
 import logo from "/src/assets/images/CryptoViewLogo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = showMenu ? "hidden" : "auto";
+  }, [showMenu]);
 
   return (
     <nav>
