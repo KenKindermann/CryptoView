@@ -5,16 +5,19 @@
   border-radius: 5px;
   padding: 0.5rem 1rem;
   margin: 0 1rem;
-  overflow-x: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 
   table {
     width: 100%;
-    min-width: 900px;
+    min-width: 850px;
     white-space: nowrap;
+  }
+
+  .table {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   th {
@@ -27,7 +30,6 @@
     font-size: 1.25rem;
     border-bottom: 2px solid black;
     padding: 0.75rem;
-    margin-right: 1rem;
   }
 
   tbody img {
