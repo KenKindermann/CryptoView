@@ -32,10 +32,11 @@ nav {
       color: $highlight;
       cursor: pointer;
     }
+  }
 
-    img {
-      display: none;
-    }
+  img {
+    display: none;
+    cursor: pointer;
   }
 }
 
@@ -60,6 +61,7 @@ nav {
 @media (max-width: 640px) {
   .nav-links {
     position: absolute;
+    z-index: 10;
     inset: 0;
     width: 100vw;
     height: 50vh;
@@ -82,6 +84,7 @@ nav {
 
     img {
       position: absolute;
+      display: block;
       width: 45px;
       bottom: 0;
       left: 50%;

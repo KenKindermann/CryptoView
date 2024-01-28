@@ -139,8 +139,9 @@ nav .social-media-icons {
   color: #00f8e1;
   cursor: pointer;
 }
-.nav-links ul img {
+.nav-links img {
   display: none;
+  cursor: pointer;
 }
 
 .toggle-bar {
@@ -163,6 +164,7 @@ nav .social-media-icons {
 @media (max-width: 640px) {
   .nav-links {
     position: absolute;
+    z-index: 10;
     inset: 0;
     width: 100vw;
     height: 50vh;
@@ -183,6 +185,7 @@ nav .social-media-icons {
   }
   .nav-links img {
     position: absolute;
+    display: block;
     width: 45px;
     bottom: 0;
     left: 50%;

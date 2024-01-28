@@ -29,13 +29,13 @@ const Navbar = () => {
           url="https://instagram.com"
           target="_blank"
           bgColor="#002c45"
-          style={{ width: "35px", height: "35px", display: showMenu ? "none" : "block" }}
+          style={{ width: "35px", height: "35px", zIndex: 0 }}
         />
         <SocialIcon
           url="https://discord.com"
           target="_blank"
           bgColor="#002c45"
-          style={{ width: "35px", height: "35px", display: showMenu ? "none" : "block" }}
+          style={{ width: "35px", height: "35px", zIndex: 0 }}
         />
       </div>
       <div className="toggle-bar" onClick={() => setShowMenu(true)}>
