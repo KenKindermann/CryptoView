@@ -172,6 +172,7 @@ nav .social-media-icons {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  text-align: center;
 }
 #hero img {
   width: 50px;
@@ -184,6 +185,14 @@ nav .social-media-icons {
   }
   50% {
     transform: translateY(2rem);
+  }
+}
+@media (max-width: 500px) {
+  #hero h1 {
+    font-size: 3rem;
+  }
+  #hero h2 {
+    font-size: 1.75rem;
   }
 }
 #market {
