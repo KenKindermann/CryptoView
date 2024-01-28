@@ -4,13 +4,31 @@ footer {
   background-color: $dark-blue;
   padding: 3rem 1rem;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   gap: 0.5rem;
 
+  .footer-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
   p {
     font-size: 1.5rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
+
+  span,
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  img {
+    width: 100px;
+    margin-left: 0.5rem;
   }
 }

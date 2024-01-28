@@ -354,14 +354,29 @@ footer {
   background-color: #002c45;
   padding: 3rem 1rem;
   color: white;
+  text-align: center;
+  gap: 0.5rem;
+}
+footer .footer-items {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 footer p {
   font-size: 1.5rem;
+}
+footer span {
+  font-size: 0.75rem;
+}
+footer span,
+footer img {
+  display: inline-block;
+  vertical-align: middle;
+}
+footer img {
+  width: 100px;
+  margin-left: 0.5rem;
 }
 
 #detail-view {
