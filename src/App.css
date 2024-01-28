@@ -190,19 +190,27 @@ nav .social-media-icons {
   border: 3px solid white;
   border-radius: 5px;
   padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  overflow-x: auto;
+}
+#market::-webkit-scrollbar {
+  display: none;
 }
 #market table {
   width: 100%;
+  min-width: 900px;
+  white-space: nowrap;
 }
 #market th {
   font-size: 1.4rem;
 }
 #market tr {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 35%;
+  grid-template-columns: 30% 1fr 1fr 25%;
   font-size: 1.25rem;
   border-bottom: 2px solid black;
   padding: 0.75rem;
+  margin-right: 1rem;
 }
 #market tbody img {
   width: 30px;
