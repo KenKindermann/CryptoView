@@ -27,7 +27,7 @@ ol {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
@@ -141,6 +141,9 @@ nav .social-media-icons {
 .nav-links ul li:hover {
   color: #00f8e1;
   cursor: pointer;
+}
+.nav-links ul li a {
+  color: #002c45;
 }
 .nav-links img {
   display: none;

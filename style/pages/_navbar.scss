@@ -34,6 +34,10 @@ nav {
       color: $highlight;
       cursor: pointer;
     }
+
+    li a {
+      color: $dark-blue;
+    }
   }
 
   img {
