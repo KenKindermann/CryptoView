@@ -14,11 +14,15 @@ const Navbar = () => {
       <img src={logo} alt="cryptoview logo" className="logo" />
       <div className={`nav-links ${showMenu && `active`}`}>
         <ul>
-          <li>Home</li>
+          <li>
+            <a href="#hero"> Home </a>
+          </li>
           <li>
             <a href="#market">Market</a>
           </li>
-          <li>Join us</li>
+          <li>
+            <a href="#join-us">Join us </a>
+          </li>
         </ul>
         <img
           src="/src/assets/icons/keyboard_arrow_up_FILL0_wght400_GRAD0_opsz24.svg"
