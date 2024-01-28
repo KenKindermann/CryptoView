@@ -123,9 +123,7 @@ nav img {
 }
 nav .social-media-icons {
   display: flex;
-  justify-content: end;
   gap: 0.5rem;
-  width: 175px;
 }
 
 .nav-links ul {
@@ -186,7 +184,7 @@ nav .social-media-icons {
     align-items: center;
     padding: 0;
   }
-  .nav-links ul li {
+  .nav-links ul li a {
     color: white;
   }
   .nav-links img {

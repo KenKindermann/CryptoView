@@ -15,13 +15,19 @@ const Navbar = () => {
       <div className={`nav-links ${showMenu && `active`}`}>
         <ul>
           <li>
-            <a href="#hero"> Home </a>
+            <a href="#hero" onClick={() => setShowMenu(false)}>
+              Home
+            </a>
           </li>
           <li>
-            <a href="#market">Market</a>
+            <a href="#market" onClick={() => setShowMenu(false)}>
+              Market
+            </a>
           </li>
           <li>
-            <a href="#join-us">Join us </a>
+            <a href="#join-us" onClick={() => setShowMenu(false)}>
+              Join us
+            </a>
           </li>
         </ul>
         <img
