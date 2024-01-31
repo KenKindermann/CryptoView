@@ -24,27 +24,6 @@ const Diagram = ({ id }) => {
     }
   }, [history]);
 
-  useEffect(() => {
-    console.log("HISOTREY", history);
-  }, [history]);
-
-  // useEffect(() => {
-  //   setHistory(test);
-  // }, []);
-
-  // Formatting history data from api to needed structure for diagram
-  // useEffect(() => {
-  //   if (history) {
-  //     const formattedData = history.data.prices.map((item) => ({
-  //       month: moment(item[0]).format("MMM YY"),
-  //       time: moment(item[0]).format("YYYY-MM-DD"),
-  //       price: item[1],
-  //     }));
-
-  //     setFormattedData(formattedData);
-  //   }
-  // }, [history]);
-
   // Format
   const formatXAxis = (tickItem) => {
     const date = moment(tickItem, "YYYY-MM-DD");
