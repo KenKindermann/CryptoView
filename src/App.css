@@ -134,14 +134,14 @@ nav .social-media-icons {
 .nav-links ul li {
   font-size: 1.25rem;
   color: #002c45;
-  transition: 0.5s ease-in-out;
-}
-.nav-links ul li:hover {
-  color: #00f8e1;
-  cursor: pointer;
 }
 .nav-links ul li a {
   color: #002c45;
+  transition: 0.5s ease-in-out;
+}
+.nav-links ul li a:hover {
+  color: #00f8e1;
+  cursor: pointer;
 }
 .nav-links img {
   display: none;
