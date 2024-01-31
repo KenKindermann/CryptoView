@@ -2,6 +2,7 @@
 
 #detail-view {
   min-height: 90svh;
+
   .coin-details {
     margin: 0 2rem;
     display: flex;
@@ -45,6 +46,7 @@
     &::-webkit-scrollbar {
       width: 10px;
     }
+
     &::-webkit-scrollbar-track {
       background: $dark-blue;
       border-radius: 5px;
@@ -56,10 +58,21 @@
     }
   }
 
-  .diagram {
-    display: flex;
-    justify-content: center;
+  .diagram-container {
     margin-top: 1rem;
+    padding: 0 2rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .diagram {
+    height: 350px;
+    min-width: 700px;
   }
 
   .choose-period {
@@ -110,6 +123,14 @@
         width: 30%;
         margin: 0 auto;
       }
+    }
+
+    .diagram-container {
+      padding: 0;
+    }
+
+    .yAxis {
+      font-size: 0.75rem;
     }
   }
 }

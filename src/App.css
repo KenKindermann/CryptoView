@@ -426,10 +426,20 @@ footer img {
   background: #00f8e1;
   border-radius: 5px;
 }
-#detail-view .diagram {
-  display: flex;
-  justify-content: center;
+#detail-view .diagram-container {
   margin-top: 1rem;
+  padding: 0 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+#detail-view .diagram-container::-webkit-scrollbar {
+  display: none;
+}
+#detail-view .diagram {
+  height: 350px;
+  min-width: 700px;
 }
 #detail-view .choose-period {
   display: flex;
@@ -469,6 +479,12 @@ footer img {
   #detail-view .image-and-details img {
     width: 30%;
     margin: 0 auto;
+  }
+  #detail-view .diagram-container {
+    padding: 0;
+  }
+  #detail-view .yAxis {
+    font-size: 0.75rem;
   }
 }
 
