@@ -25,16 +25,16 @@ nav {
     li {
       font-size: 1.25rem;
       color: $dark-blue;
-      transition: 0.5s ease-in-out;
-    }
-
-    li:hover {
-      color: $highlight;
-      cursor: pointer;
     }
 
     li a {
       color: $dark-blue;
+      transition: 0.5s ease-in-out;
+    }
+
+    li a:hover {
+      color: $highlight;
+      cursor: pointer;
     }
   }
 
