@@ -5,7 +5,7 @@ const periods = [
     label: "1 month",
     substract: 1,
     dateFormat: "DD.MM.",
-    getTicks: (data) => data.map(({ time }) => moment(time).startOf("day").format("YYYY-MM-DD")),
+    getTicks: (data) => Array.from(new Set(data.map(({ time }) => moment(time).startOf("day").format("YYYY-MM-DD")))),
   },
   {
     label: "3 month",

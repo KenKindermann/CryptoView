@@ -63,7 +63,7 @@ const Diagram = ({ id }) => {
           {periods.map((period) => (
             <button
               key={period.label}
-              className={activePeriod === period.label ? `active` : null}
+              className={activePeriod === period ? `active` : null}
               onClick={() => {
                 setActivePeriod(period), setUniqueTicks(period.getTicks(history));
               }}
