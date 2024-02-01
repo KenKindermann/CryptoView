@@ -1,33 +1,56 @@
 import { SocialIcon } from "react-social-icons";
 import logo from "/src/assets/images/CryptoViewLogo.png";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.style.overflow = showMenu ? "hidden" : "auto";
   }, [showMenu]);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const sectionId = location.hash.substring(1);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
+  const navigateToSection = (sectionId) => {
+    navigate("/#" + sectionId);
+    setShowMenu(false);
+  };
 
   return (
     <nav>
       <img src={logo} alt="cryptoview logo" className="logo" />
       <div className={`nav-links ${showMenu && `active`}`}>
         <ul>
-          <li>
-            <a href="#hero" onClick={() => setShowMenu(false)}>
-              Home
-            </a>
+          <li
+            onClick={() => {
+              navigateToSection("hero");
+            }}
+          >
+            Home
           </li>
-          <li>
-            <a href="#market" onClick={() => setShowMenu(false)}>
-              Market
-            </a>
+          <li
+            onClick={() => {
+              navigateToSection("market");
+            }}
+          >
+            Market
           </li>
-          <li>
-            <a href="#join-us" onClick={() => setShowMenu(false)}>
-              Join us
-            </a>
+          <li
+            onClick={() => {
+              navigateToSection("join-us");
+            }}
+          >
+            Join us
           </li>
         </ul>
         <img
