@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <img src={logo} alt="cryptoview logo" className="logo" />
+      <img src={logo} alt="cryptoview logo" className="logo" onClick={() => navigate("/")} />
       <div className={`nav-links ${showMenu && `active`}`}>
         <ul>
           <li
