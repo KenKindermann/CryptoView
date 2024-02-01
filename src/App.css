@@ -135,11 +135,11 @@ nav .social-media-icons {
   font-size: 1.25rem;
   color: #002c45;
 }
-.nav-links ul li a {
+.nav-links ul li {
   color: #002c45;
   transition: 0.5s ease-in-out;
 }
-.nav-links ul li a:hover {
+.nav-links ul li:hover {
   color: #00f8e1;
   cursor: pointer;
 }
