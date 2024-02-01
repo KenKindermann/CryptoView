@@ -27,12 +27,12 @@ nav {
       color: $dark-blue;
     }
 
-    li a {
+    li {
       color: $dark-blue;
       transition: 0.5s ease-in-out;
     }
 
-    li a:hover {
+    li:hover {
       color: $highlight;
       cursor: pointer;
     }
