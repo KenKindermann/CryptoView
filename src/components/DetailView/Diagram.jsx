@@ -2,7 +2,6 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContai
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import test from "./testObject.js";
 import periods from "./periods.js";
 
 const Diagram = ({ id }) => {
