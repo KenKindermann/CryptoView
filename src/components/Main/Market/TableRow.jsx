@@ -8,6 +8,7 @@ const TableRow = ({ data }) => {
   };
 
   const navigate = useNavigate();
+
   return (
     <tr onClick={() => navigate(`detailview/${data.id}`)}>
       <td>
