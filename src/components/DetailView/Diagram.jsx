@@ -2,7 +2,6 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContai
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import test from "./testObject.js";
 import periods from "./periods.js";
 
 const Diagram = ({ id }) => {
@@ -11,6 +10,7 @@ const Diagram = ({ id }) => {
   const [activePeriod, setActivePeriod] = useState(periods[3]);
   const [uniqueTicks, setUniqueTicks] = useState();
 
+  // Fetch data using useFetch hook when id is changing
   useEffect(() => {
     if (id) {
       const url = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=0`;
@@ -18,13 +18,14 @@ const Diagram = ({ id }) => {
     }
   }, [id]);
 
+  // Set unique ticks by getTicks object method when history is changing
   useEffect(() => {
     if (history) {
       setUniqueTicks(activePeriod.getTicks(history));
     }
   }, [history]);
 
-  // Format
+  // Format x axis
   const formatXAxis = (tickItem) => {
     const date = moment(tickItem, "YYYY-MM-DD");
     return date.format(activePeriod.dateFormat);

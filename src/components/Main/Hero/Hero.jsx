@@ -1,4 +1,4 @@
-import arrowDown from "/src/assets/icons/arrow_downward_FILL0_wght400_GRAD0_opsz24.svg";
+import arrowDown from "/assets/icons/arrow_downward_FILL0_wght400_GRAD0_opsz24.svg";
 
 const Hero = () => {
   return (
