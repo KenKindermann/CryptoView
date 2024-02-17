@@ -1,5 +1,5 @@
 import { SocialIcon } from "react-social-icons";
-import logo from "/src/assets/images/CryptoViewLogo.png";
+import logo from "/assets/images/CryptoViewLogo.png";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
