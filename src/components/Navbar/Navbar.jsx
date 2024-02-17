@@ -54,7 +54,7 @@ const Navbar = () => {
           </li>
         </ul>
         <img
-          src="/src/assets/icons/keyboard_arrow_up_FILL0_wght400_GRAD0_opsz24.svg"
+          src="/assets/icons/keyboard_arrow_up_FILL0_wght400_GRAD0_opsz24.svg"
           alt="arrow up icon"
           onClick={() => setShowMenu(false)}
         />

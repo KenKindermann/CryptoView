@@ -83,13 +83,13 @@ section:not(:first-child) {
 
 @font-face {
   font-family: "Rowdies";
-  src: url("/src/fonts/Rowdies/Rowdies-Regular.ttf");
+  src: url("/fonts/Rowdies/Rowdies-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Rowdies";
-  src: url("/src/fonts/Rowdies/Rowdies-Bold.ttf");
+  src: url("/fonts/Rowdies/Rowdies-Bold.ttf");
   font-weight: bold;
   font-style: normal;
 }

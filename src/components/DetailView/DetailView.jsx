@@ -15,10 +15,6 @@ const DetailView = () => {
     fetchData(url, setCurrentCoin);
   }, [id]);
 
-  useEffect(() => {
-    console.log(currentCoin);
-  }, [currentCoin]);
-
   const formattedData = {
     current_price: new Intl.NumberFormat("de-DE", { style: "currency", currency: "USD" }).format(
       currentCoin?.data.market_data.current_price.usd
